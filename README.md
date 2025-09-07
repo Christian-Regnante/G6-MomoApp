@@ -8,7 +8,6 @@ It demonstrates backend data processing, database management, and frontend visua
 - [Christian Regnante] (GitHub: https://github.com/christian-regnante)
 - [Semana Parfait] (GitHub: https://github.com/semanaparfait)
 - [Sandrine Umugwaneza] (GitHub: https://github.com/sand02004)
-- [Name 4] (GitHub: @username4)
 
 ## 🏗️ System Architecture
 The application is organized into four main layers:
