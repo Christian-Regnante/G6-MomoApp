@@ -1,4 +1,4 @@
-# Team MoMo Analytics
+# Team: Group 6
 
 ## 📌 Project Description
 This project processes MoMo SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for analysis and visualization.  
@@ -23,4 +23,4 @@ The application is organized into four main layers:
 We are following Agile practices with a Scrum board.  
 📌 [View Scrum Board](<INSERT_SCRUM_BOARD_LINK_HERE>)  
 
-## 📂 Project Structure (planned)
+<!-- ## 📂 Project Structure (planned) -->
