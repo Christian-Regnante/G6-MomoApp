@@ -19,12 +19,12 @@ The application is organized into four main layers:
 3. **Storage**: SQLite database storing structured transaction data.  
 4. **Frontend Dashboard**: Static HTML/CSS/JS interface (or optional API) that visualizes processed data.  
 
-[View Architecture Diagram](<INSERT_DRAW_IO_LINK_HERE>)  
-📂 Diagram file: `/docs/architecture.png`
+   [View Architecture Diagram](<MomoApp_Design.png>)  
+📂 Diagram file: `MomoApp_Design.png`
 
 >**Scrum Board**
 
 We are following Agile practices with a Scrum board.  
-[View Scrum Board](<INSERT_SCRUM_BOARD_LINK_HERE>)  
+[View Scrum Board](<https://github.com/users/Christian-Regnante/projects/5>)  
 
 <!-- ## 📂 Project Structure (planned) -->
