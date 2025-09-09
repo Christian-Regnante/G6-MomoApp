@@ -16,8 +16,8 @@ It demonstrates backend data processing, database management, and frontend visua
 The application is organized into four main layers:
 1. **Data Source**: Raw XML files containing MoMo SMS data.  
 2. **ETL Pipeline**: Scripts to parse XML, clean/normalize data, categorize transactions, and load results into a relational database.  
-3. **Storage**: SQLite database storing structured transaction data.  
-4. **Frontend Dashboard**: Static HTML/CSS/JS interface (or optional API) that visualizes processed data.  
+3. **Storage**: Mysql database storing structured transaction data.  
+4. **Frontend Dashboard**: Static HTML/CSS/JS interfacethat provides visual report chart of the process data.
 
    [View Architecture Diagram](<MomoApp_Design.png>)  
 📂 Diagram file: `MomoApp_Design.png`
