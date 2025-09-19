@@ -42,7 +42,7 @@ The G6 MomoApp processes and visualizes mobile money (MoMo) transactions directl
 * Interactive frontend dashboard for data visualization and reporting.
 * Scalable architecture to handle growing data volumes.
 
-**Technologies Used:** Python for backend processing, SQL for database management, JavaScript/React for frontend dashboard, and XML/JSON for data handling.
+**Technologies Used:** Python for backend processing, SQL for database management, HTML/CSS/JavaScript for frontend visualization, and XML/JSON for data handling.
 
 ## Folder Structure
 
@@ -85,18 +85,11 @@ Follow these steps to set up and start using the G6 MomoApp:
    ```
 
 2. **Install Dependencies**
-   Depending on your environment, install the necessary dependencies for backend processing and frontend visualization. For example:
+   Install the necessary Python packages for backend processing:
 
-   * **Python backend** (if used for data processing):
-
-     ```bash
-     pip install -r requirements.txt
-     ```
-   * **Node.js frontend** (if applicable):
-
-     ```bash
-     npm install
-     ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 3. **Set Up the Database**
 
@@ -116,25 +109,16 @@ Follow these steps to set up and start using the G6 MomoApp:
    * Navigate to `/examples` to find sample JSON/XML files.
    * Import these files into the database or use the backend scripts to process them automatically.
 
-5. **Run the Backend Processing**
-   Execute the scripts that parse, clean, and categorize MoMo SMS data:
+5. **Run the Backend Processing and Frontend Dashboard**
+   Execute the script that processes transactions and starts the simple HTML/JS dashboard:
 
    ```bash
-   python process_transactions.py
+   python app.py
    ```
 
-   This will populate the database with structured transaction data ready for analysis.
+   Open your browser and navigate to `http://localhost:8000` (or the port specified) to access the dashboard.
 
-6. **Start the Frontend Dashboard**
-   Launch the dashboard to visualize and analyze the transactions:
-
-   ```bash
-   npm start
-   ```
-
-   Open your browser and navigate to `http://localhost:3000` (or the port specified) to access the dashboard.
-
-7. **Usage Tips and Notes**
+6. **Usage Tips and Notes**
 
    * Regularly update the database with new SMS transaction files to keep analytics up-to-date.
    * Check logs for any errors in data parsing or categorization.
@@ -142,8 +126,6 @@ Follow these steps to set up and start using the G6 MomoApp:
    * Ensure that any new data follows the expected XML/JSON format to prevent processing errors.
    * For production environments, consider automating data ingestion and dashboard updates to maintain continuous operation.
 
-   git clone https://github.com/yourusername/G6_MomoApp.git
-   cd G6_MomoApp
 
 
 <!-- ## 📂 Project Structure (planned) -->
