@@ -1,3 +1,41 @@
+[
+    {
+    "Users": {
+        "Id": ["INTEGER", "PRIMARY KEY"],
+        "FullNames": "VARCHAR(255)",
+        "PhoneNumber": "VARCHAR(15)  unique"
+    },
+    "Transactioin_categories": {
+        "Id": ["INTEGER", "PRIMARY KEY"],
+        "UserId": "FOREIGN KEY REFERENCES Users(Id)",
+        "categoryName": "VARCHAR(255)",
+        "Messages": "VARCHAR(255)"
+    },
+    "Transactions": {
+        "Id": ["INTEGER", "PRIMARY KEY"],
+        "UserId": "FOREIGN KEY REFERENCES Users(Id)",
+        "CategoryId": "FOREIGN KEY REFERENCES Transaction_categories(Id)",
+        "Amount": "INTEGER",
+        "Fee": "INTEGER",
+        "NewBalance": "INTEGER",
+        "Currency": "VARCHAR(10)",
+        "Type": "ENUM",
+        "Date": "DATETIME",
+        "ServiceCenter": "VARCHAR(255)",
+        "Status": "INTEGER",
+        "Locked": "INTEGER"
+    },    "System_logs": {
+        "LogId": ["INTEGER", "PRIMARY KEY"],
+        "TransactioinId": "FOREIGN KEY REFERENCES Transactions(Id) INTEGER",
+        "LogMessage": "VARCHAR(255)",
+        "Issue": "ENUM",
+        "Description": "TEXT",
+        "CreatedAt": "Timestamp"
+
+    }
+
+},
+
 {
   "transaction": {
     "id": 101,
@@ -31,3 +69,6 @@
     }
   }
 }
+]
+
+
