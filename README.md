@@ -2,14 +2,23 @@
 
 >**Project Description**
 
-This project processes MoMo SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for analysis and visualization.  
-It demonstrates backend data processing, database management, and frontend visualization skills.
+The G6 MomoApp processes and visualizes mobile money (MoMo) transactions directly from SMS messages, enabling users and businesses to efficiently track and analyze financial activity. It parses SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for interactive analysis and visualization. This project demonstrates skills in backend data processing, database management, and frontend visualization.
 
 >**Team Members**
 
 - [Christian Regnante] (GitHub: https://github.com/christian-regnante)
 - [Semana Parfait] (GitHub: https://github.com/semanaparfait)
 - [Sandrine Umugwaneza] (GitHub: https://github.com/sand02004)
+
+>**Key Features:**
+
+* Automated parsing and cleaning of MoMo SMS data.
+* Categorization of transactions for easier analysis.
+* Secure storage in a relational database.
+* Interactive frontend dashboard for data visualization and reporting.
+* Scalable architecture to handle growing data volumes.
+
+>**Technologies to be used:** Python for backend processing, SQL for database management, HTML/CSS/JavaScript for frontend visualization, and XML/JSON for data handling.
 
 >**System Architecture**
 
@@ -28,23 +37,14 @@ We are following Agile practices with a Scrum board.
 [View Scrum Board](<https://github.com/users/Christian-Regnante/projects/5>)  
 
 # Updated README.md
-# G6 MomoApp
 
-## Project Description
+>**Database Design Realeted Docs**
 
-The G6 MomoApp processes and visualizes mobile money (MoMo) transactions directly from SMS messages, enabling users and businesses to efficiently track and analyze financial activity. It parses SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for interactive analysis and visualization. This project demonstrates skills in backend data processing, database management, and frontend visualization.
+   * [View The Documenation](<docs/DatabaseDesign_Document.pdf>)
 
-**Key Features:**
+   * [View The ERD Diagram](<docs/erd_diagram.jpeg>)
 
-* Automated parsing and cleaning of MoMo SMS data.
-* Categorization of transactions for easier analysis.
-* Secure storage in a relational database.
-* Interactive frontend dashboard for data visualization and reporting.
-* Scalable architecture to handle growing data volumes.
-
-**Technologies Used:** Python for backend processing, SQL for database management, HTML/CSS/JavaScript for frontend visualization, and XML/JSON for data handling.
-
-## Folder Structure
+### Folder Structure
 
 * **/docs**: Contains documentation files, including the ERD diagram, user manuals, and other reference materials.
 * **/database**: Contains SQL scripts for creating and managing the database and its tables.
@@ -84,14 +84,14 @@ Follow these steps to set up and start using the G6 MomoApp:
    cd g6-momoapp
    ```
 
-2. **Install Dependencies**
+<!-- 2. **Install Dependencies**
    Install the necessary Python packages for backend processing:
 
    ```bash
    pip install -r requirements.txt
-   ```
+   ``` -->
 
-3. **Set Up the Database**
+2. **Set Up the Database**
 
    * Navigate to the `/database` folder.
    * Run the SQL scripts provided to create the database and tables:
@@ -106,25 +106,25 @@ Follow these steps to set up and start using the G6 MomoApp:
 4. **Load Sample Data**
    To test the system with sample MoMo transactions:
 
-   * Navigate to `/examples` to find sample JSON/XML files.
+   * Navigate to `/examples` to find sample JSON file.
    * Import these files into the database or use the backend scripts to process them automatically.
 
-5. **Run the Backend Processing and Frontend Dashboard**
+<!-- 5. **Run the Backend Processing and Frontend Dashboard**
    Execute the script that processes transactions and starts the simple HTML/JS dashboard:
 
    ```bash
    python app.py
    ```
 
-   Open your browser and navigate to `http://localhost:8000` (or the port specified) to access the dashboard.
+   Open your browser and navigate to `http://localhost:8000` (or the port specified) to access the dashboard. -->
 
-6. **Usage Tips and Notes**
+<!-- 6. **Usage Tips and Notes**
 
    * Regularly update the database with new SMS transaction files to keep analytics up-to-date.
    * Check logs for any errors in data parsing or categorization.
    * Use filters in the dashboard to analyze transactions by type, date, or amount.
    * Ensure that any new data follows the expected XML/JSON format to prevent processing errors.
-   * For production environments, consider automating data ingestion and dashboard updates to maintain continuous operation.
+   * For production environments, consider automating data ingestion and dashboard updates to maintain continuous operation. -->
 
 
 
