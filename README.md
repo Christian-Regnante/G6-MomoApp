@@ -28,26 +28,120 @@ We are following Agile practices with a Scrum board.
 [View Scrum Board](<https://github.com/users/Christian-Regnante/projects/5>)  
 
 # Updated README.md
+# G6 MomoApp
+
 ## Project Description
 
-The G6 MomoApp processes MoMo SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for analysis and visualization. This project demonstrates backend data processing, database management, and frontend visualization skills.
+The G6 MomoApp processes and visualizes mobile money (MoMo) transactions directly from SMS messages, enabling users and businesses to efficiently track and analyze financial activity. It parses SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for interactive analysis and visualization. This project demonstrates skills in backend data processing, database management, and frontend visualization.
+
+**Key Features:**
+
+* Automated parsing and cleaning of MoMo SMS data.
+* Categorization of transactions for easier analysis.
+* Secure storage in a relational database.
+* Interactive frontend dashboard for data visualization and reporting.
+* Scalable architecture to handle growing data volumes.
+
+**Technologies Used:** Python for backend processing, SQL for database management, JavaScript/React for frontend dashboard, and XML/JSON for data handling.
 
 ## Folder Structure
 
-- **/docs**: Contains the ERD diagram and other documentation files.
-- **/database**: Contains SQL scripts for database creation and management.
-- **/examples**: Contains JSON files with sample data for testing and development.
-- **README.md**: This file, providing an overview of the project.
+* **/docs**: Contains documentation files, including the ERD diagram, user manuals, and other reference materials.
+* **/database**: Contains SQL scripts for creating and managing the database and its tables.
+* **/examples**: Sample JSON/XML files with MoMo transactions for testing and development purposes.
+* **/src**: Contains the main application code for backend processing and frontend visualization.
+* **/tests**: Contains test scripts to validate data processing logic and ensure correct categorization.
+* **README.md**: This file, providing an overview and setup instructions for the project.
 
 ## Database Design
 
-The database schema is designed to efficiently store and manage transaction data. The ERD diagram in the `/docs` folder illustrates the relationships between the entities involved.
+The database schema is designed to efficiently store and manage transaction data, maintain integrity, and support fast querying.
+
+**Main Entities:**
+
+* **User**: Stores user details.
+* **Transaction**: Stores individual MoMo transactions.
+* **Category**: Stores transaction categories (e.g., Payment, Transfer, Withdrawal).
+* **Account**: Stores information about different mobile money accounts.
+
+**Relationships:**
+
+* One-to-many between Users and Transactions.
+* One-to-many between Categories and Transactions.
+* One-to-one or one-to-many relationships with Accounts, depending on user setup.
+
+The ERD diagram in the `/docs` folder visually illustrates these relationships and key attributes.
 
 ## Setup and Usage
 
-1. Clone the repository:
+Follow these steps to set up and start using the G6 MomoApp:
+
+1. **Clone the Repository**
+   Clone the project to your local machine using Git:
 
    ```bash
+   git clone <repository_url>
+   cd g6-momoapp
+   ```
+
+2. **Install Dependencies**
+   Depending on your environment, install the necessary dependencies for backend processing and frontend visualization. For example:
+
+   * **Python backend** (if used for data processing):
+
+     ```bash
+     pip install -r requirements.txt
+     ```
+   * **Node.js frontend** (if applicable):
+
+     ```bash
+     npm install
+     ```
+
+3. **Set Up the Database**
+
+   * Navigate to the `/database` folder.
+   * Run the SQL scripts provided to create the database and tables:
+
+     ```sql
+     -- Example for MySQL
+     source create_database.sql;
+     source create_tables.sql;
+     ```
+   * Update any configuration files with your database credentials.
+
+4. **Load Sample Data**
+   To test the system with sample MoMo transactions:
+
+   * Navigate to `/examples` to find sample JSON/XML files.
+   * Import these files into the database or use the backend scripts to process them automatically.
+
+5. **Run the Backend Processing**
+   Execute the scripts that parse, clean, and categorize MoMo SMS data:
+
+   ```bash
+   python process_transactions.py
+   ```
+
+   This will populate the database with structured transaction data ready for analysis.
+
+6. **Start the Frontend Dashboard**
+   Launch the dashboard to visualize and analyze the transactions:
+
+   ```bash
+   npm start
+   ```
+
+   Open your browser and navigate to `http://localhost:3000` (or the port specified) to access the dashboard.
+
+7. **Usage Tips and Notes**
+
+   * Regularly update the database with new SMS transaction files to keep analytics up-to-date.
+   * Check logs for any errors in data parsing or categorization.
+   * Use filters in the dashboard to analyze transactions by type, date, or amount.
+   * Ensure that any new data follows the expected XML/JSON format to prevent processing errors.
+   * For production environments, consider automating data ingestion and dashboard updates to maintain continuous operation.
+
    git clone https://github.com/yourusername/G6_MomoApp.git
    cd G6_MomoApp
 
