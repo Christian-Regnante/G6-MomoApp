@@ -27,4 +27,29 @@ The application is organized into four main layers:
 We are following Agile practices with a Scrum board.  
 [View Scrum Board](<https://github.com/users/Christian-Regnante/projects/5>)  
 
+# Updated README.md
+## Project Description
+
+The G6 MomoApp processes MoMo SMS data in XML format, cleans and categorizes transactions, stores them in a relational database, and provides a frontend dashboard for analysis and visualization. This project demonstrates backend data processing, database management, and frontend visualization skills.
+
+## Folder Structure
+
+- **/docs**: Contains the ERD diagram and other documentation files.
+- **/database**: Contains SQL scripts for database creation and management.
+- **/examples**: Contains JSON files with sample data for testing and development.
+- **README.md**: This file, providing an overview of the project.
+
+## Database Design
+
+The database schema is designed to efficiently store and manage transaction data. The ERD diagram in the `/docs` folder illustrates the relationships between the entities involved.
+
+## Setup and Usage
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/G6_MomoApp.git
+   cd G6_MomoApp
+
+
 <!-- ## 📂 Project Structure (planned) -->
