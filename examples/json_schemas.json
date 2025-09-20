@@ -1,74 +1,208 @@
-[
-    {
-    "Users": {
-        "Id": ["INTEGER", "PRIMARY KEY"],
-        "FullNames": "VARCHAR(255)",
-        "PhoneNumber": "VARCHAR(15)  unique"
-    },
-    "Transactioin_categories": {
-        "Id": ["INTEGER", "PRIMARY KEY"],
-        "UserId": "FOREIGN KEY REFERENCES Users(Id)",
-        "categoryName": "VARCHAR(255)",
-        "Messages": "VARCHAR(255)"
-    },
-    "Transactions": {
-        "Id": ["INTEGER", "PRIMARY KEY"],
-        "UserId": "FOREIGN KEY REFERENCES Users(Id)",
-        "CategoryId": "FOREIGN KEY REFERENCES Transaction_categories(Id)",
-        "Amount": "INTEGER",
-        "Fee": "INTEGER",
-        "NewBalance": "INTEGER",
-        "Currency": "VARCHAR(10)",
-        "Type": "ENUM",
-        "Date": "DATETIME",
-        "ServiceCenter": "VARCHAR(255)",
-        "Status": "INTEGER",
-        "Locked": "INTEGER"
-    },    "System_logs": {
-        "LogId": ["INTEGER", "PRIMARY KEY"],
-        "TransactioinId": "FOREIGN KEY REFERENCES Transactions(Id) INTEGER",
-        "LogMessage": "VARCHAR(255)",
-        "Issue": "ENUM",
-        "Description": "TEXT",
-        "CreatedAt": "Timestamp"
-
-    }
-
-},
-
 {
-  "transaction": {
-    "id": 101,
-    "user_id": 1,
-    "transaction_id": "987654",
-    "message": "You have received 10,000 RWF from John Doe",
-    "type": "received",
-    "readable_date": "2025-09-18T14:30:00Z",
-    "status": "completed",
-    "locked": false,
-    "user": {
-      "id": 1,
-      "full_names": "mugwaneza christian",
-      "phone_number": "+250722245279"
+  "Users": [
+    {
+      "Id": 10,
+      "Fullnames": "Jane Smith",
+      "PhoneNumber": "0782345683"
     },
-    "category": {
-      "transaction_id": "987654",
-      "full_names":"dubai",
-      "phone_number": "+250722245279",
-      "amount": 10000,
-      "transaction_type": "received",
-      "transaction_fee": 100,
-      "new_balance": 50000,
-      "date": "2025-09-18T14:30:00Z"
+    {
+      "Id": 11,
+      "Fullnames": "Samuel Carter",
+      "PhoneNumber": "0790777777"
     },
-    "system_log": {
-      "log_id": 1,
-      "action": "insert",
-      "timestamp": "2025-09-18T14:30:05Z",
-      "performed_by": "system"
+    {
+      "Id": 12,
+      "Fullnames": "Linda Green",
+      "PhoneNumber": "0788999999"
+    },
+    {
+      "Id": 13,
+      "Fullnames": "Samuel Carter",
+      "PhoneNumber": "95464"
+    },
+    {
+      "Id": 14,
+      "Fullnames": "Bank of Kigali",
+      "PhoneNumber": "0795963036"
     }
-  }
+  ],
+  "TransactionCategories": [
+    {
+      "Id": 5,
+      "UserId": 13,
+      "CategoryName": "Received",
+      "Messages": "You have received 135983 RWF from Jane Smith (*********683) on your mobile money account at 2024-12-31 13:42:07. Message from sender: . Your new balance:164962 RWF. Financial Transaction Id: 42280278088."
+    },
+    {
+      "Id": 6,
+      "UserId": 11,
+      "CategoryName": "Transfer",
+      "Messages": "*165*S*21000 RWF transferred to Samuel Carter (250790777777) from 36521838 at 2025-01-01 13:38:05 . Fee was: 250 RWF. New balance: 45012 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#"
+    },
+    {
+      "Id": 7,
+      "UserId": 12,
+      "CategoryName": "Deposit",
+      "Messages": "*113*R*A bank deposit of 10000 RWF has been added to your mobile money account at 2025-01-02 23:14:15. Your NEW BALANCE :11922 RWF. Cash Deposit::CASH::::0::250795963036.Thank you for using MTN MobileMoney.*EN#"
+    },
+    {
+      "Id": 8,
+      "UserId": 10,
+      "CategoryName": "Payments",
+      "Messages": "TxId: 51732411227. Your payment of 600 RWF to Samuel Carter 95464 has been completed at 2024-05-10 21:32:32. Your new balance: 400 RWF. Fee was 0 RWF.Kanda*182*16# wiyandikishe muri poromosiyo ya BivaMoMotima, ugire amahirwe yo gutsindira ibihembo bishimishije."
+    },
+    {
+      "Id": 9,
+      "UserId": 14,
+      "CategoryName": "Transfer",
+      "Messages": "*165*S*8000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-12-30 14:10:06 . Fee was: 100 RWF. New balance: 51779 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#"
+    }
+  ],
+  "Transactions": [
+    {
+      "Id": 1,
+      "UserId": 10,
+      "CategoryId": 8,
+      "Amount": 600,
+      "Date": "2024-05-10T21:32:32",
+      "Fee": 0,
+      "NewBalance": 400,
+      "Currency": "RWF",
+      "CategoryType": "Payments",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0
+    },
+    {
+      "Id": 2,
+      "UserId": 11,
+      "CategoryId": 6,
+      "Amount": 21000,
+      "Date": "2025-01-01T13:38:05",
+      "Fee": 250,
+      "NewBalance": 45012,
+      "Currency": "RWF",
+      "CategoryType": "Transfer",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0
+    },
+    {
+      "Id": 3,
+      "UserId": 12,
+      "CategoryId": 7,
+      "Amount": 10000,
+      "Date": "2025-01-02T23:14:15",
+      "Fee": 0,
+      "NewBalance": 11922,
+      "Currency": "RWF",
+      "CategoryType": "Deposit",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0
+    },
+    {
+      "Id": 4,
+      "UserId": 14,
+      "CategoryId": 9,
+      "Amount": 8000,
+      "Date": "2025-01-02T23:14:15",
+      "Fee": 100,
+      "NewBalance": 51779,
+      "Currency": "RWF",
+      "CategoryType": "Transfer",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0
+    },
+    {
+      "Id": 5,
+      "UserId": 13,
+      "CategoryId": 5,
+      "Amount": 135983,
+      "Date": "2024-12-31T13:42:07",
+      "Fee": 0,
+      "NewBalance": 164962,
+      "Currency": "RWF",
+      "CategoryType": "Received",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0
+    }
+  ],
+  "SystemLogs": [
+    {
+      "LogId": 1,
+      "TransactionId": 1,
+      "LogMessage": "Payment processed",
+      "Issue": "INFO",
+      "Description": "The payment for the electricity bill was successfully processed.",
+      "CreatedAt": "2024-05-10T21:32:32"
+    },
+    {
+      "LogId": 2,
+      "TransactionId": 2,
+      "LogMessage": "Low balance warning",
+      "Issue": "WARNING",
+      "Description": "User balance is low after grocery purchase.",
+      "CreatedAt": "2025-01-01T13:38:05"
+    },
+    {
+      "LogId": 3,
+      "TransactionId": 3,
+      "LogMessage": "Salary received",
+      "Issue": "INFO",
+      "Description": "Monthly salary has been credited to the account.",
+      "CreatedAt": "2025-01-02T23:14:15"
+    },
+    {
+      "LogId": 4,
+      "TransactionId": 4,
+      "LogMessage": "Money Transfer Failed",
+      "Issue": "ERROR",
+      "Description": "The money transfer could not be processed due to insufficient funds on your account.",
+      "CreatedAt": "2025-01-02T23:14:15"
+    },
+    {
+      "LogId": 5,
+      "TransactionId": 5,
+      "LogMessage": "Payment processed",
+      "Issue": "INFO",
+      "Description": "The payment for the electricity bill was successfully processed.",
+      "CreatedAt": "2024-12-31T13:42:07"
+    }
+  ],
+  "ComplexTransactionExample": [
+    {
+      "TransactionId": 1,
+      "Amount": 600,
+      "Date": "2024-05-10T21:32:32",
+      "Fee": 0,
+      "NewBalance": 400,
+      "Currency": "RWF",
+      "CategoryType": "Payments",
+      "ServiceCenter": "+250788110383",
+      "Status": -1,
+      "Locked": 0,
+      "User": {
+        "Id": 10,
+        "Fullnames": "Jane Smith",
+        "PhoneNumber": "0782345683"
+      },
+      "Category": {
+        "Id": 8,
+        "CategoryName": "Payments",
+        "Messages": "TxId: 51732411227. Your payment of 600 RWF to Samuel Carter 95464 has been completed at 2024-05-10 21:32:32. Your new balance: 400 RWF. Fee was 0 RWF.Kanda*182*16# wiyandikishe muri poromosiyo ya BivaMoMotima, ugire amahirwe yo gutsindira ibihembo bishimishije."
+      },
+      "SystemLogs": [
+        {
+          "LogId": 1,
+          "LogMessage": "Payment processed",
+          "Issue": "INFO",
+          "Description": "The payment for the electricity bill was successfully processed.",
+          "CreatedAt": "2024-05-10T21:32:32"
+        }
+      ]
+    }
+  ]
 }
-]
-
-
