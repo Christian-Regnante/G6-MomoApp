@@ -50,3 +50,34 @@ CREATE TABLE IF NOT EXISTS System_logs (
     CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL COMMENT 'Using current timestamp as default value to record when the log entry was created',
     FOREIGN KEY (TransactionId) REFERENCES Transactions (Id)
 );
+
+-- DML Inserting records into every table for testing purposes
+
+INSERT INTO Users (Fullnames, PhoneNumber) VALUES
+('Samuel Carter', '95464'),
+('Samuel Carter', '0790777777'),
+('Bank of Kigali', '0795963036'),
+('Jane Smith', '0782345683');
+('Linda Green', '0788999999');
+
+INSERT INTO Transactions_categories (UserId, CategoryName, Messages) VALUES
+(13, 'Received', 'You have received 135983 RWF from Jane Smith (*********683) on your mobile money account at 2024-12-31 13:42:07. Message from sender: . Your new balance:164962 RWF. Financial Transaction Id: 42280278088.'),
+(14, 'Transfer', '*165*S*8000 RWF transferred to Linda Green (250788999999) from 36521838 at 2024-12-30 14:10:06 . Fee was: 100 RWF. New balance: 51779 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#'),
+(11, 'Transfer', '*165*S*21000 RWF transferred to Samuel Carter (250790777777) from 36521838 at 2025-01-01 13:38:05 . Fee was: 250 RWF. New balance: 45012 RWF. Kugura ama inite cg interineti kuri MoMo, Kanda *182*2*1# .*EN#'),
+(12, 'Deposit', '*113*R*A bank deposit of 10000 RWF has been added to your mobile money account at 2025-01-02 23:14:15. Your NEW BALANCE :11922 RWF. Cash Deposit::CASH::::0::250795963036.Thank you for using MTN MobileMoney.*EN#'),
+(10, 'Payments', 'TxId: 51732411227. Your payment of 600 RWF to Samuel Carter 95464 has been completed at 2024-05-10 21:32:32. Your new balance: 400 RWF. Fee was 0 RWF.Kanda*182*16# wiyandikishe muri poromosiyo ya BivaMoMotima, ugire amahirwe yo gutsindira ibihembo bishimishije.');
+
+INSERT INTO Transactions (UserId, CategoryId, Amount, Date, Fee, NewBalance, Currency, CategoryType, ServiceCenter, Status, Locked) VALUES
+(10, 8, 600, '2024-05-10 21:32:32', 0, 400, 'RWF', 'Payments', '+250788110383', -1, 0),
+(11, 6, 21000, '2025-01-01 13:38:05', 250, 45012, 'RWF', 'Transfer', '+250788110383', -1, 0),
+(12, 7, 10000, '2025-01-02 23:14:15', 0, 11922, 'RWF', 'Deposit', '+250788110383', -1, 0),
+(14, 9, 8000, '2025-01-02 23:14:15', 100, 51779, 'RWF', 'Transfer', '+250788110383', -1, 0),
+(13, 5, 135983, '2024-12-31 13:42:07', 0, 164962, 'RWF', 'Received', '+250788110383', -1, 0);
+
+INSERT INTO System_logs (TransactionId, LogMessage, Issue, Description) VALUES
+(1, 'Payment processed', 'INFO', 'The payment for the electricity bill was successfully processed.'),
+(2, 'Low balance warning', 'WARNING', 'User balance is low after grocery purchase.'),
+(3, 'Salary received', 'INFO', 'Monthly salary has been credited to the account.'),
+(4, 'Money Transfer Failed', 'ERROR', 'The money transfer could not be processed due to insufficient funds on your account.'),
+(5, 'Payment processed', 'INFO', 'The payment for the electricity bill was successfully processed.');
+
