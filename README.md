@@ -173,8 +173,7 @@ cd g6-momoapp
 * Run the SQL scripts to create the database and tables:
 
 ```sql
-source create_database.sql;
-source create_tables.sql;
+source database_setup.sql;
 ```
 
 * Update configuration files with your database credentials.
@@ -182,12 +181,11 @@ source create_tables.sql;
 3. **Run the REST API**:
 
 ```bash
-python src/api.py
+python api/api_server.py
 ```
 
 * Access endpoints via curl or Postman (see Authentication & Security section).  
 
 4. **Testing & Validation**:
 
-* Test endpoints for GET, POST, PUT, DELETE.  
-* Validate DSA performance using the scripts in `/tests`.
+* Test endpoints for GET, POST, PUT, DELETE.
