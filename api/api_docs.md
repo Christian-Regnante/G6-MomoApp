@@ -37,7 +37,7 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
     }
   ]
   ```
-
+- Here's the related screenshot: [GET & Confirm AUTH](</screenshots/get_auth.png>)
 ---
 
 ## GET /transactions/{id}
@@ -62,7 +62,8 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
 - Errors:
   - 401 Unauthorized — missing/invalid Basic auth
   - 404 Not Found — no transaction with the given id
-
+    
+- Here's the related screenshot: [GET By Id](</screenshots/get_byID.png>)
 ---
 
 ## POST /transactions
@@ -92,7 +93,8 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
 - Errors:
   - 401 Unauthorized — missing/invalid Basic auth
   - 400 Bad Request — malformed JSON (not explicitly handled in code, may raise server error)
-
+    
+- Here's the related screenshot: [Creating New Transaction](</screenshots/post.png>)
 ---
 
 ## PUT /transactions/{id}
@@ -118,7 +120,8 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
   - 401 Unauthorized — missing/invalid Basic auth
   - 404 Not Found — no transaction with the given id
   - 400 Bad Request — malformed JSON
-
+    
+- Here's the related screenshot: [Updating By Id](</screenshots/put.png>)
 ---
 
 ## DELETE /transactions/{id}
@@ -140,6 +143,8 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
 - Errors:
   - 401 Unauthorized — missing/invalid Basic auth
   - 404 Not Found — no transaction with the given id
+ 
+- Here's the related screenshot: [Deleting By Id](</screenshots/delete.png>)
 
 
 ## Implementation notes / caveats
@@ -147,3 +152,4 @@ Authorization header example: Authorization: Basic YWRtaW46cGFzc3dvcmQ= (admin:p
 - Transactions are loaded from `./modified_sms_v2.xml` at server start (via dsa.parse_sms.parse_sms_xml) and held in memory. Changes are not persisted.
 - The server does not validate transaction fields beyond JSON parsing and uses the provided `id` as the key.
 - Content-Type for JSON responses is `application/json`. Unauthorized responses write a short plain body and set WWW-Authenticate.
+
